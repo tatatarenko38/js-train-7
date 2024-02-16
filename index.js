@@ -1,6 +1,8 @@
 //Завдання 1: Функція для створення символу
 function createSymbol() {
   // Повернемо символ без опису
+  const symbolKey = Symbol();
+  return symbolKey;
 }
 
 console.log("Завдання 1 ====================================");
