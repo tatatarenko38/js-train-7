@@ -158,13 +158,13 @@ let rangeObject = {
 // Функція "useSymbolIterator" використовує ітератор для отримання значень об'єкта
 function useSymbolIterator(obj) {
   // Створюємо масив для зберігання значень
-  let a = [];
+  let result = [];
   // Проходимо крізь елементи об'єкта obj, використовуючи цикл "for...of"
-  //   for (let num of rangeObject){
+     for (let value of obj){
 
-  //     result = a.next()
-  //   }
-  // return result;
+       result = [...result,value];
+     }
+   return result;
   // Додаємо кожне значення до масиву "result"
   // Повертаємо масив зі значеннями
 }
@@ -193,9 +193,9 @@ let myObject = {
   //Повертаємо this
   // Оголошення методу "next" для ітерації
   next() {
-    if (currentIndex < category.length) {
-      let value = category[name];
-      currentIndex++;
+    if (this.currentIndex < this.category.length) {
+      const value = this.category[this.currentIndex].name;
+      this.currentIndex++;
       return { done: false, value: value };
     } else {
       return { done: true };
